@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="theme-color" content="#FAFAFA" />
+    <title>BODYCRAFT | Elevate Your Training - Abatta, Abidjan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        background-color: #fafafa;
+        color: #1a1a1a;
+      }
+
+      .glass-nav {
+        background-color: #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        /* On définit le padding de base ici */
+        padding-top: calc(env(safe-area-inset-top, 20px) + 1rem);
+        padding-bottom: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .orange-gradient {
+        background: linear-gradient(135deg, #ff6b00 0%, #ff8a00 100%);
+      }
+
+      .card-shadow {
+        box-shadow:
+          0 10px 30px -5px rgba(0, 0, 0, 0.04),
+          0 4px 10px -5px rgba(0, 0, 0, 0.02);
+        transition: all 0.3s ease;
+      }
+
+      .card-shadow:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-out;
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .btn-hover {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .btn-hover:hover {
+        transform: scale(1.02);
+        filter: brightness(1.1);
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #ddd;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #ff6b00;
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <nav
+      class="fixed w-full z-50 transition-all duration-300 glass-nav py-4"
+      id="navbar"
+    >
+      <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+          <div
+            class="w-10 h-10 orange-gradient rounded-xl flex items-center justify-center shadow-lg shadow-orange-200"
+          >
+            <i data-lucide="dumbbell" class="text-white w-6 h-6"></i>
+          </div>
+          <span class="text-2xl font-extrabold tracking-tighter italic"
+            >BODY<span class="text-[#FF6B00]">CRAFT</span></span
+          >
+        </div>
+
+        <div class="hidden md:flex items-center gap-8 font-medium text-sm">
+          <a href="#programmes" class="hover:text-[#FF6B00] transition-colors"
+            >Programmes</a
+          >
+          <a href="#about" class="hover:text-[#FF6B00] transition-colors"
+            >La Salle</a
+          >
+          <a href="#tarifs" class="hover:text-[#FF6B00] transition-colors"
+            >Tarifs</a
+          >
+          <a href="#contact" class="hover:text-[#FF6B00] transition-colors"
+            >Contact</a
+          >
+          <a
+            href="#tarifs"
+            class="orange-gradient text-white px-6 py-2.5 rounded-full btn-hover shadow-lg shadow-orange-100"
+            >S'inscrire</a
+          >
+        </div>
+
+        <button class="md:hidden p-2" id="menu-btn">
+          <i data-lucide="menu" class="w-6 h-6" id="menu-icon"></i>
+        </button>
+      </div>
+
+      <div
+        class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full left-0 p-6 shadow-xl"
+        id="mobile-menu"
+      >
+        <div class="flex flex-col gap-6 font-semibold">
+          <a href="#programmes" class="mobile-link">Programmes</a>
+          <a href="#about" class="mobile-link">La Salle</a>
+          <a href="#tarifs" class="mobile-link">Tarifs</a>
+          <a href="#contact" class="mobile-link">Contact</a>
+          <a
+            href="#tarifs"
+            class="orange-gradient text-white px-6 py-4 rounded-xl text-center"
+            >S'inscrire</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <section class="relative pt-32 pb-20 overflow-hidden">
+      <div
+        class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center"
+      >
+        <div class="reveal">
+          <div
+            class="inline-flex items-center gap-2 bg-orange-50 text-[#FF6B00] px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6"
+          >
+            <span class="relative flex h-2 w-2">
+              <span
+                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"
+              ></span>
+              <span
+                class="relative inline-flex rounded-full h-2 w-2 bg-orange-500"
+              ></span>
+            </span>
+            Ouvert maintenant à Abatta
+          </div>
+          <h1 class="text-5xl lg:text-7xl font-extrabold leading-[1.1] mb-6">
+            Transforme ton corps. <br />
+            <span class="text-transparent bg-clip-text orange-gradient"
+              >Rejoins l'élite.</span
+            >
+          </h1>
+          <p class="text-gray-500 text-lg mb-8 max-w-lg leading-relaxed">
+            BODYCRAFT — une expérience fitness premium à Abatta, conçue pour
+            ceux qui exigent la propreté, le professionnalisme et des résultats
+            concrets.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 mb-10">
+            <a
+              href="#tarifs"
+              class="orange-gradient text-white px-8 py-4 rounded-2xl font-bold text-center btn-hover shadow-xl shadow-orange-200"
+            >
+              Commencer l'aventure
+            </a>
+            <a
+              href="#about"
+              class="bg-white border border-gray-100 px-8 py-4 rounded-2xl font-bold text-center hover:bg-gray-50 transition-all flex items-center justify-center gap-2"
+            >
+              Découvrir la salle
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+          <div class="flex items-center gap-6 border-t border-gray-100 pt-8">
+            <div>
+              <p class="text-2xl font-bold">1000+</p>
+              <p class="text-gray-400 text-sm">Membres actifs</p>
+            </div>
+            <div class="h-10 w-px bg-gray-100"></div>
+            <div>
+              <p class="text-2xl font-bold">15+</p>
+              <p class="text-gray-400 text-sm">Coachs certifiés</p>
+            </div>
+            <div class="h-10 w-px bg-gray-100"></div>
+            <div class="flex -space-x-3">
+              <img
+                src="https://i.pravatar.cc/100?u=1"
+                class="w-10 h-10 rounded-full border-2 border-white"
+                alt="user"
+              />
+              <img
+                src="https://i.pravatar.cc/100?u=2"
+                class="w-10 h-10 rounded-full border-2 border-white"
+                alt="user"
+              />
+              <img
+                src="https://i.pravatar.cc/100?u=3"
+                class="w-10 h-10 rounded-full border-2 border-white"
+                alt="user"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="relative reveal">
+          <div
+            class="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-orange-100/50 rounded-full blur-3xl"
+          ></div>
+          <img
+            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80"
+            alt="Fitness Center"
+            class="rounded-[2.5rem] shadow-2xl object-cover h-[600px] w-full"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="programmes" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+          <h2 class="text-3xl font-bold mb-4">Nos Programmes</h2>
+          <p class="text-gray-500">
+            Des parcours adaptés à vos objectifs, encadrés par des
+            professionnels du sport.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-[#FAFAFA] p-8 rounded-[2rem] card-shadow reveal">
+            <div
+              class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i data-lucide="heart-pulse" class="text-[#FF6B00] w-7 h-7"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Cardio & Endurance</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Améliorez votre souffle et votre santé cardiaque sur nos machines
+              haut de gamme.
+            </p>
+          </div>
+          <div class="bg-[#FAFAFA] p-8 rounded-[2rem] card-shadow reveal">
+            <div
+              class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i data-lucide="flame" class="text-[#FF6B00] w-7 h-7"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Perte de poids</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Un programme intensif et un suivi nutritionnel pour brûler les
+              graisses efficacement.
+            </p>
+          </div>
+          <div class="bg-[#FAFAFA] p-8 rounded-[2rem] card-shadow reveal">
+            <div
+              class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i data-lucide="zap" class="text-[#FF6B00] w-7 h-7"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Prise de masse</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Développez votre volume musculaire avec nos équipements de
+              musculation libres.
+            </p>
+          </div>
+          <div class="bg-[#FAFAFA] p-8 rounded-[2rem] card-shadow reveal">
+            <div
+              class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i data-lucide="shield-check" class="text-[#FF6B00] w-7 h-7"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Renforcement</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Tonifiez votre corps et améliorez votre posture au quotidien.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-24 bg-gray-50">
+      <div
+        class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center"
+      >
+        <div class="grid grid-cols-2 gap-4 reveal">
+          <img
+            src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&q=80"
+            class="rounded-3xl h-64 w-full object-cover shadow-lg"
+            alt="Gym"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&q=80"
+            class="rounded-3xl h-64 w-full object-cover mt-8 shadow-lg"
+            alt="Gym"
+          />
+        </div>
+        <div class="reveal">
+          <h2 class="text-4xl font-bold mb-6 italic tracking-tight">
+            L'excellence au cœur d'Abatta.
+          </h2>
+          <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+            BODYCRAFT n'est pas juste une salle de sport. C'est un espace
+            premium pensé pour offrir un environnement propre, motivant et
+            professionnel. Que vous soyez débutant ou athlète confirmé, nous
+            mettons à votre disposition le meilleur équipement d'Abidjan.
+          </p>
+
+          <div class="space-y-6 mb-10">
+            <div class="flex items-start gap-4">
+              <div class="p-2 bg-white rounded-lg shadow-sm">
+                <i data-lucide="map-pin" class="text-[#FF6B00] w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="font-bold">Localisation</p>
+                <p class="text-gray-500">
+                  Route d’Abatta, face Ola Energy, Abidjan
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="p-2 bg-white rounded-lg shadow-sm">
+                <i data-lucide="clock" class="text-[#FF6B00] w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="font-bold">Horaires d'ouverture</p>
+                <p class="text-gray-500 text-sm">Lun - Ven : 06h00 – 22h00</p>
+                <p class="text-gray-500 text-sm">Sam - Dim : 08h00 – 18h00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tarifs" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16 reveal">
+          <h2 class="text-4xl font-bold mb-4">Nos Offres</h2>
+          <p class="text-gray-500">
+            Choisissez le plan qui correspond à votre ambition.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="p-10 rounded-[2.5rem] border border-gray-100 card-shadow reveal"
+          >
+            <h3 class="text-xl font-bold mb-2">Basique</h3>
+            <div class="flex items-baseline gap-1 mb-6">
+              <span class="text-4xl font-extrabold tracking-tighter"
+                >25.000</span
+              >
+              <span class="text-gray-400 font-medium">CFA/mois</span>
+            </div>
+            <ul class="space-y-4 mb-10 text-gray-600 text-sm">
+              <li class="flex items-center gap-3">
+                <i data-lucide="check" class="text-green-500 w-4 h-4"></i> Accès
+                salle musculation
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="check" class="text-green-500 w-4 h-4"></i>
+                Vestiaires & Douches
+              </li>
+              <li class="flex items-center gap-3 opacity-40">
+                <i data-lucide="x" class="w-4 h-4"></i> Coach personnel
+              </li>
+              <li class="flex items-center gap-3 opacity-40">
+                <i data-lucide="x" class="w-4 h-4"></i> Accès VIP 24/7
+              </li>
+            </ul>
+            <button
+              class="w-full py-4 rounded-2xl border border-gray-200 font-bold hover:bg-gray-50 transition-all"
+            >
+              S'inscrire
+            </button>
+          </div>
+
+          <div
+            class="p-10 rounded-[2.5rem] bg-gray-900 text-white transform scale-105 shadow-2xl shadow-orange-200 relative overflow-hidden reveal"
+          >
+            <div
+              class="absolute top-5 right-5 bg-[#FF6B00] text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest"
+            >
+              Populaire
+            </div>
+            <h3 class="text-xl font-bold mb-2">Standard</h3>
+            <div class="flex items-baseline gap-1 mb-6">
+              <span
+                class="text-4xl font-extrabold tracking-tighter text-[#FF6B00]"
+                >40.000</span
+              >
+              <span class="text-gray-400 font-medium">CFA/mois</span>
+            </div>
+            <ul class="space-y-4 mb-10 text-gray-300 text-sm">
+              <li class="flex items-center gap-3">
+                <i data-lucide="check" class="text-[#FF6B00] w-4 h-4"></i> Tous
+                les accès Basique
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="check" class="text-[#FF6B00] w-4 h-4"></i> Cours
+                collectifs inclus
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="check" class="text-[#FF6B00] w-4 h-4"></i> 1
+                séance bilan avec coach
+              </li>
+              <li class="flex items-center gap-3 opacity-40">
+                <i data-lucide="x" class="w-4 h-4"></i> Accès VIP 24/7
+              </li>
+            </ul>
+            <button
+              class="w-full py-4 rounded-2xl orange-gradient text-white font-bold btn-hover"
+            >
+              S'inscrire maintenant
+            </button>
+          </div>
+
+          <div
+            class="p-10 rounded-[2.5rem] border border-gray-100 card-shadow reveal"
+          >
+            <h3 class="text-xl font-bold mb-2">Premium</h3>
+            <div class="flex items-baseline gap-1 mb-6">
+              <span class="text-4xl font-extrabold tracking-tighter"
+                >65.000</span
+              >
+              <span class="text-gray-400 font-medium">CFA/mois</span>
+            </div>
+            <ul class="space-y-4 mb-10 text-gray-600 text-sm">
+              <li class="flex items-center gap-3">
+                <i data-lucide="check" class="text-green-500 w-4 h-4"></i> Accès
+                illimité 24/7
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="check" class="text-green-500 w-4 h-4"></i> Coach
+                personnel dédié
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="check" class="text-green-500 w-4 h-4"></i>
+                Espace détente & Sauna
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="check" class="text-green-500 w-4 h-4"></i>
+                Coaching nutritionnel
+              </li>
+            </ul>
+            <button
+              class="w-full py-4 rounded-2xl border border-gray-200 font-bold hover:bg-gray-50 transition-all"
+            >
+              Devenir membre Gold
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-gray-50 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 text-center mb-12 reveal">
+        <h2 class="text-3xl font-bold">Ils nous font confiance</h2>
+      </div>
+
+      <div
+        class="flex transition-transform duration-500 ease-in-out px-6 max-w-4xl mx-auto"
+        id="testimonial-container"
+      >
+        <div
+          class="min-w-full bg-white p-10 md:p-16 rounded-[3rem] shadow-sm text-center reveal"
+        >
+          <i
+            data-lucide="quote"
+            class="w-12 h-12 text-orange-100 mx-auto mb-6"
+          ></i>
+          <p
+            class="text-xl md:text-2xl font-medium italic mb-8 leading-relaxed"
+          >
+            "La meilleure salle d'Abatta sans hésiter. Le matériel est toujours
+            propre et l'ambiance est parfaite pour rester concentré."
+          </p>
+          <div class="flex items-center justify-center gap-4">
+            <img
+              src="https://i.pravatar.cc/100?u=a"
+              class="w-14 h-14 rounded-full border-2 border-[#FF6B00]"
+              alt="Jean"
+            />
+            <div class="text-left">
+              <p class="font-bold">Jean-Marc Koffi</p>
+              <p class="text-sm text-gray-400">Membre depuis 2 ans</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 px-6">
+      <div
+        class="max-w-5xl mx-auto orange-gradient rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden shadow-2xl shadow-orange-300 reveal"
+      >
+        <div
+          class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-64 h-64 bg-white/10 rounded-full blur-3xl"
+        ></div>
+        <h2 class="text-4xl md:text-5xl font-black mb-6">
+          Prêt à commencer ta transformation ?
+        </h2>
+        <p class="text-orange-100 text-lg mb-10 max-w-xl mx-auto">
+          Rejoins la communauté SELECTFIT dès aujourd'hui et profite d'une
+          séance d'essai gratuite.
+        </p>
+
+        <form class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
+          <input
+            type="email"
+            placeholder="Ton adresse email"
+            class="flex-1 px-6 py-4 rounded-2xl text-black focus:outline-none focus:ring-2 focus:ring-white/50"
+          />
+          <button
+            class="bg-black text-white px-8 py-4 rounded-2xl font-bold btn-hover shadow-xl"
+          >
+            C'est parti !
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <footer id="contact" class="pt-24 pb-12 bg-white border-t border-gray-100">
+      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12 mb-16">
+        <div class="col-span-1 md:col-span-1">
+          <div class="flex items-center gap-2 mb-6">
+            <div
+              class="w-8 h-8 orange-gradient rounded-lg flex items-center justify-center"
+            >
+              <i data-lucide="dumbbell" class="text-white w-4 h-4"></i>
+            </div>
+            <span class="text-xl font-black italic tracking-tighter"
+              >BODY<span class="text-[#FF6B00]">CRAFT</span></span
+            >
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            L'excellence du fitness à Abatta. Votre santé, notre priorité.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-bold mb-6">Navigation</h4>
+          <ul class="space-y-4 text-sm text-gray-500">
+            <li>
+              <a href="#programmes" class="hover:text-[#FF6B00]">Programmes</a>
+            </li>
+            <li><a href="#about" class="hover:text-[#FF6B00]">La Salle</a></li>
+            <li>
+              <a href="#tarifs" class="hover:text-[#FF6B00]">Nos Tarifs</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold mb-6">Contact</h4>
+          <ul class="space-y-4 text-sm text-gray-500">
+            <li class="flex items-center gap-3">
+              <i data-lucide="phone" class="w-4 h-4 text-[#FF6B00]"></i> 05 56
+              77 71 13
+            </li>
+            <li class="flex items-center gap-3">
+              <i data-lucide="mail" class="w-4 h-4 text-[#FF6B00]"></i>
+              bodycraft.ci@gmail.com
+            </li>
+            <li class="flex items-center gap-3">
+              <i data-lucide="map-pin" class="w-4 h-4 text-[#FF6B00]"></i>
+              Abatta, village
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold mb-6">Réseaux</h4>
+          <div class="flex gap-4">
+            <a
+              href="#"
+              class="w-10 h-10 border border-gray-100 rounded-xl flex items-center justify-center hover:bg-orange-50 hover:text-[#FF6B00] transition-all"
+              ><i data-lucide="instagram" class="w-5 h-5"></i
+            ></a>
+            <a
+              href="#"
+              class="w-10 h-10 border border-gray-100 rounded-xl flex items-center justify-center hover:bg-orange-50 hover:text-[#FF6B00] transition-all"
+              ><i data-lucide="facebook" class="w-5 h-5"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="max-w-7xl mx-auto px-6 pt-8 border-t border-gray-100 flex flex-col md:row justify-between items-center gap-4 text-xs text-gray-400"
+      >
+        <p>© 2026 BODYCRAFT Abidjan. Tous droits réservés.</p>
+        <div class="flex gap-6">
+          <a href="#">Mentions Légales</a>
+          <a href="#">Confidentialité</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Initialisation des icônes
+      lucide.createIcons();
+
+      // Animation au Scroll (Intersection Observer)
+      const observerOptions = {
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      }, observerOptions);
+
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
+
+      // Effet Navbar au scroll
+      window.addEventListener("scroll", () => {
+        const nav = document.getElementById("navbar");
+
+        if (window.scrollY > 50) {
+          // État compressé (en scrollant)
+          nav.classList.add("shadow-md");
+          nav.style.paddingTop =
+            "calc(env(safe-area-inset-top, 20px) + 0.5rem)";
+          nav.style.paddingBottom = "0.5rem";
+        } else {
+          // État initial (tout en haut)
+          nav.classList.remove("shadow-md");
+          // On remet 1rem pour que le logo redescende un peu par rapport à l'encoche
+          nav.style.paddingTop =
+            "calc(env(safe-area-inset-top, 20px) + 1.2rem)";
+          nav.style.paddingBottom = "1.2rem";
+        }
+      });
+
+      // Simple Testimonial Loop (Bonus)
+      const testimonials = [
+        {
+          text: "La meilleure salle d'Abatta sans hésiter. Le matériel est toujours propre et l'ambiance est parfaite.",
+          name: "Jean-Marc Koffi",
+          meta: "Membre depuis 2 ans",
+        },
+        {
+          text: "Un coaching de qualité. J'ai perdu 8kg en 3 mois grâce au programme personnalisé de SelectFit.",
+          name: "Marie-Claire D.",
+          meta: "Membre Standard",
+        },
+      ];
+
+      // Logique simple pour changer le témoignage toutes les 5 secondes
+      let currentIdx = 0;
+      const container = document.getElementById("testimonial-container");
+      // (Pour cet exemple, on reste sur un design statique propre, mais on peut injecter du JS ici)
+
+      // Gestion du menu Mobile
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuBtn.addEventListener("click", () => {
+        const isHidden = mobileMenu.classList.contains("hidden");
+
+        if (isHidden) {
+          // Ouvrir le menu
+          mobileMenu.classList.remove("hidden");
+          menuBtn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
+        } else {
+          // Fermer le menu
+          mobileMenu.classList.add("hidden");
+          menuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+        }
+
+        // On demande à Lucide de transformer le nouveau <i data-lucide="..."></i> en SVG
+        lucide.createIcons();
+      });
+
+      // Fermer le menu quand on clique sur un lien
+      document.querySelectorAll(".mobile-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          menuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+          lucide.createIcons();
+        });
+      });
+    </script>
+  </body>
+</html>
