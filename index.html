@@ -12,81 +12,14 @@
       content="black-translucent"
     />
     <meta name="theme-color" content="#FAFAFA" />
-    <title>BODYCRAFT | Elevate Your Training - Abatta, Abidjan</title>
+    <title>Empire Gym</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <script src="https://unpkg.com/lucide@latest"></script>
-
-    <style>
-      body {
-        font-family: "Plus Jakarta Sans", sans-serif;
-        background-color: #fafafa;
-        color: #1a1a1a;
-      }
-
-      .glass-nav {
-        background-color: #ffffff;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        /* On définit le padding de base ici */
-        padding-top: calc(env(safe-area-inset-top, 20px) + 1rem);
-        padding-bottom: 1rem;
-        transition: all 0.3s ease;
-      }
-
-      .orange-gradient {
-        background: linear-gradient(135deg, #ff6b00 0%, #ff8a00 100%);
-      }
-
-      .card-shadow {
-        box-shadow:
-          0 10px 30px -5px rgba(0, 0, 0, 0.04),
-          0 4px 10px -5px rgba(0, 0, 0, 0.02);
-        transition: all 0.3s ease;
-      }
-
-      .card-shadow:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
-      }
-
-      .reveal {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.8s ease-out;
-      }
-
-      .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .btn-hover {
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      .btn-hover:hover {
-        transform: scale(1.02);
-        filter: brightness(1.1);
-      }
-
-      /* Custom Scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #f1f1f1;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #ddd;
-        border-radius: 10px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #ff6b00;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body class="antialiased">
     <nav
@@ -101,7 +34,7 @@
             <i data-lucide="dumbbell" class="text-white w-6 h-6"></i>
           </div>
           <span class="text-2xl font-extrabold tracking-tighter italic"
-            >BODY<span class="text-[#FF6B00]">CRAFT</span></span
+            >Empire<span class="text-[#FF6B00]">Gym</span></span
           >
         </div>
 
@@ -173,7 +106,7 @@
             >
           </h1>
           <p class="text-gray-500 text-lg mb-8 max-w-lg leading-relaxed">
-            BODYCRAFT — une expérience fitness premium à Abatta, conçue pour
+            Empire Gym — une expérience fitness premium à Abatta, conçue pour
             ceux qui exigent la propreté, le professionnalisme et des résultats
             concrets.
           </p>
@@ -318,7 +251,7 @@
             L'excellence au cœur d'Abatta.
           </h2>
           <p class="text-gray-600 text-lg mb-8 leading-relaxed">
-            BODYCRAFT n'est pas juste une salle de sport. C'est un espace
+            Empire Gym n'est pas juste une salle de sport. C'est un espace
             premium pensé pour offrir un environnement propre, motivant et
             professionnel. Que vous soyez débutant ou athlète confirmé, nous
             mettons à votre disposition le meilleur équipement d'Abidjan.
@@ -549,7 +482,7 @@
               <i data-lucide="dumbbell" class="text-white w-4 h-4"></i>
             </div>
             <span class="text-xl font-black italic tracking-tighter"
-              >BODY<span class="text-[#FF6B00]">CRAFT</span></span
+              >Empire<span class="text-[#FF6B00]">Gym</span></span
             >
           </div>
           <p class="text-gray-400 text-sm leading-relaxed">
@@ -579,7 +512,7 @@
             </li>
             <li class="flex items-center gap-3">
               <i data-lucide="mail" class="w-4 h-4 text-[#FF6B00]"></i>
-              bodycraft.ci@gmail.com
+              empiregym.ci@gmail.com
             </li>
             <li class="flex items-center gap-3">
               <i data-lucide="map-pin" class="w-4 h-4 text-[#FF6B00]"></i>
@@ -637,108 +570,13 @@
         class="max-w-7xl mx-auto px-6 pt-8 border-t border-gray-100 flex flex-col md:row justify-between items-center gap-4 text-xs text-gray-400"
       >
         <p>
-          © <span id="current-year">2026</span> BODYCRAFT Abidjan. Tous droits
+          © <span id="current-year">2026</span> Empire Gym Abidjan. Tous droits
           réservés.
         </p>
         <p>Designed & Developed by MMD.Dev</p>
       </div>
     </footer>
 
-    <script>
-      // Initialisation des icônes
-      lucide.createIcons();
-
-      // Animation au Scroll (Intersection Observer)
-      const observerOptions = {
-        threshold: 0.1,
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-          }
-        });
-      }, observerOptions);
-
-      document
-        .querySelectorAll(".reveal")
-        .forEach((el) => observer.observe(el));
-
-      // Effet Navbar au scroll
-      window.addEventListener("scroll", () => {
-        const nav = document.getElementById("navbar");
-
-        if (window.scrollY > 50) {
-          // État compressé (en scrollant)
-          nav.classList.add("shadow-md");
-          nav.style.paddingTop =
-            "calc(env(safe-area-inset-top, 20px) + 0.5rem)";
-          nav.style.paddingBottom = "0.5rem";
-        } else {
-          // État initial (tout en haut)
-          nav.classList.remove("shadow-md");
-          // On remet 1rem pour que le logo redescende un peu par rapport à l'encoche
-          nav.style.paddingTop =
-            "calc(env(safe-area-inset-top, 20px) + 1.2rem)";
-          nav.style.paddingBottom = "1.2rem";
-        }
-      });
-
-      // Simple Testimonial Loop (Bonus)
-      const testimonials = [
-        {
-          text: "La meilleure salle d'Abatta sans hésiter. Le matériel est toujours propre et l'ambiance est parfaite.",
-          name: "Jean-Marc Koffi",
-          meta: "Membre depuis 2 ans",
-        },
-        {
-          text: "Un coaching de qualité. J'ai perdu 8kg en 3 mois grâce au programme personnalisé de SelectFit.",
-          name: "Marie-Claire D.",
-          meta: "Membre Standard",
-        },
-      ];
-
-      // Logique simple pour changer le témoignage toutes les 5 secondes
-      let currentIdx = 0;
-      const container = document.getElementById("testimonial-container");
-      // (Pour cet exemple, on reste sur un design statique propre, mais on peut injecter du JS ici)
-
-      // Gestion du menu Mobile
-      const menuBtn = document.getElementById("menu-btn");
-      const mobileMenu = document.getElementById("mobile-menu");
-
-      menuBtn.addEventListener("click", () => {
-        const isHidden = mobileMenu.classList.contains("hidden");
-
-        if (isHidden) {
-          // Ouvrir le menu
-          mobileMenu.classList.remove("hidden");
-          menuBtn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
-        } else {
-          // Fermer le menu
-          mobileMenu.classList.add("hidden");
-          menuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
-        }
-
-        // On demande à Lucide de transformer le nouveau <i data-lucide="..."></i> en SVG
-        lucide.createIcons();
-      });
-
-      // Fermer le menu quand on clique sur un lien
-      document.querySelectorAll(".mobile-link").forEach((link) => {
-        link.addEventListener("click", () => {
-          mobileMenu.classList.add("hidden");
-          menuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
-          lucide.createIcons();
-        });
-      });
-
-      // COPYRIGHT - année dynamique
-      const currentYearEl = document.getElementById("current-year");
-      if (currentYearEl) {
-        currentYearEl.textContent = new Date().getFullYear();
-      }
-    </script>
+    <script src="main.js"></script>
   </body>
 </html>
