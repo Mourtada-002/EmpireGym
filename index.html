@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -11,572 +11,638 @@
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent"
     />
-    <meta name="theme-color" content="#FAFAFA" />
+    <meta name="theme-color" content="#EFF1F2" />
     <title>Empire Gym</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="antialiased">
-    <nav
-      class="fixed w-full z-50 transition-all duration-300 glass-nav py-4"
-      id="navbar"
-    >
-      <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <div class="flex items-center gap-2">
-          <div
-            class="w-10 h-10 orange-gradient rounded-xl flex items-center justify-center shadow-lg shadow-orange-200"
+  <body>
+    <!-- INTRO OVERLAY -->
+    <div id="intro" aria-hidden="true">
+      <div class="intro-panel intro-panel--left"></div>
+      <div class="intro-panel intro-panel--right"></div>
+      <div class="intro-content">
+        <div class="intro-mark">
+          <svg
+            viewBox="0 0 48 48"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <i data-lucide="dumbbell" class="text-white w-6 h-6"></i>
-          </div>
-          <span class="text-2xl font-extrabold tracking-tighter italic"
-            >Empire<span class="text-[#FF6B00]">Gym</span></span
+            <rect
+              x="2"
+              y="2"
+              width="44"
+              height="44"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+            <line
+              x1="24"
+              y1="8"
+              x2="24"
+              y2="18"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+            <line
+              x1="24"
+              y1="30"
+              x2="24"
+              y2="40"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+            <line
+              x1="8"
+              y1="24"
+              x2="18"
+              y2="24"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+            <line
+              x1="30"
+              y1="24"
+              x2="40"
+              y2="24"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+            <circle
+              cx="24"
+              cy="24"
+              r="5"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+        <div class="intro-words">
+          <span class="intro-line" id="intro-line-1">EMPIRE</span>
+          <span class="intro-line intro-line--accent" id="intro-line-2"
+            >GYM</span
           >
         </div>
+        <div class="intro-coord">
+          05.3364° N — 04.0267° W &nbsp;·&nbsp; ABATTA, CI
+        </div>
+      </div>
+    </div>
 
-        <div class="hidden md:flex items-center gap-8 font-medium text-sm">
-          <a href="#programmes" class="hover:text-[#FF6B00] transition-colors"
-            >Programmes</a
+    <!-- NAV -->
+    <nav id="navbar">
+      <div class="container nav-inner">
+        <a href="#hero" class="brand">
+          <span class="brand-mark">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="1"
+                y="1"
+                width="22"
+                height="22"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <line
+                x1="12"
+                y1="4"
+                x2="12"
+                y2="9"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <line
+                x1="12"
+                y1="15"
+                x2="12"
+                y2="20"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <line
+                x1="4"
+                y1="12"
+                x2="9"
+                y2="12"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <line
+                x1="15"
+                y1="12"
+                x2="20"
+                y2="12"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <circle
+                cx="12"
+                cy="12"
+                r="2.5"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+            </svg>
+          </span>
+          <span class="brand-word"
+            >EMPIRE<span class="accent-text">GYM</span></span
           >
-          <a href="#about" class="hover:text-[#FF6B00] transition-colors"
-            >La Salle</a
-          >
-          <a href="#tarifs" class="hover:text-[#FF6B00] transition-colors"
-            >Tarifs</a
-          >
-          <a href="#contact" class="hover:text-[#FF6B00] transition-colors"
-            >Contact</a
-          >
-          <a
-            href="#tarifs"
-            class="orange-gradient text-white px-6 py-2.5 rounded-full btn-hover shadow-lg shadow-orange-100"
-            >S'inscrire</a
-          >
+        </a>
+
+        <div class="nav-links" id="nav-links">
+          <a href="#programmes"><span class="nav-tag">01</span>Programmes</a>
+          <a href="#about"><span class="nav-tag">02</span>La Salle</a>
+          <a href="#tarifs"><span class="nav-tag">03</span>Tarifs</a>
+          <a href="#contact"><span class="nav-tag">04</span>Contact</a>
         </div>
 
-        <button class="md:hidden p-2" id="menu-btn">
-          <i data-lucide="menu" class="w-6 h-6" id="menu-icon"></i>
+        <a href="#tarifs" class="btn btn-accent btn-small nav-cta desktop-only"
+          >S'inscrire</a
+        >
+
+        <button id="menu-btn" aria-label="Ouvrir le menu">
+          <span></span><span></span><span></span>
         </button>
       </div>
 
-      <div
-        class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full left-0 p-6 shadow-xl"
-        id="mobile-menu"
-      >
-        <div class="flex flex-col gap-6 font-semibold">
-          <a href="#programmes" class="mobile-link">Programmes</a>
-          <a href="#about" class="mobile-link">La Salle</a>
-          <a href="#tarifs" class="mobile-link">Tarifs</a>
-          <a href="#contact" class="mobile-link">Contact</a>
-          <a
-            href="#tarifs"
-            class="orange-gradient text-white px-6 py-4 rounded-xl text-center"
-            >S'inscrire</a
-          >
-        </div>
+      <div id="mobile-menu">
+        <a href="#programmes" class="mobile-link">Programmes</a>
+        <a href="#about" class="mobile-link">La Salle</a>
+        <a href="#tarifs" class="mobile-link">Tarifs</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+        <a href="#tarifs" class="btn btn-accent mobile-link">S'inscrire</a>
       </div>
     </nav>
 
-    <section class="relative pt-32 pb-20 overflow-hidden">
-      <div
-        class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center"
-      >
-        <div class="reveal">
-          <div
-            class="inline-flex items-center gap-2 bg-orange-50 text-[#FF6B00] px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6"
-          >
-            <span class="relative flex h-2 w-2">
-              <span
-                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"
-              ></span>
-              <span
-                class="relative inline-flex rounded-full h-2 w-2 bg-orange-500"
-              ></span>
-            </span>
-            Ouvert maintenant à Abatta
-          </div>
-          <h1 class="text-5xl lg:text-7xl font-extrabold leading-[1.1] mb-6">
-            Transforme ton corps. <br />
-            <span class="text-transparent bg-clip-text orange-gradient"
-              >Rejoins l'élite.</span
-            >
-          </h1>
-          <p class="text-gray-500 text-lg mb-8 max-w-lg leading-relaxed">
-            Empire Gym — une expérience fitness premium à Abatta, conçue pour
-            ceux qui exigent la propreté, le professionnalisme et des résultats
-            concrets.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 mb-10">
-            <a
-              href="#tarifs"
-              class="orange-gradient text-white px-8 py-4 rounded-2xl font-bold text-center btn-hover shadow-xl shadow-orange-200"
-            >
-              Commencer l'aventure
-            </a>
-            <a
-              href="#about"
-              class="bg-white border border-gray-100 px-8 py-4 rounded-2xl font-bold text-center hover:bg-gray-50 transition-all flex items-center justify-center gap-2"
-            >
-              Découvrir la salle
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-          </div>
-          <div class="flex items-center gap-6 border-t border-gray-100 pt-8">
-            <div>
-              <p class="text-2xl font-bold">1000+</p>
-              <p class="text-gray-400 text-sm">Membres actifs</p>
-            </div>
-            <div class="h-10 w-px bg-gray-100"></div>
-            <div>
-              <p class="text-2xl font-bold">15+</p>
-              <p class="text-gray-400 text-sm">Coachs certifiés</p>
-            </div>
-            <div class="h-10 w-px bg-gray-100"></div>
-            <div class="flex -space-x-3">
-              <img
-                src="https://i.pravatar.cc/100?u=1"
-                class="w-10 h-10 rounded-full border-2 border-white"
-                alt="user"
-              />
-              <img
-                src="https://i.pravatar.cc/100?u=2"
-                class="w-10 h-10 rounded-full border-2 border-white"
-                alt="user"
-              />
-              <img
-                src="https://i.pravatar.cc/100?u=3"
-                class="w-10 h-10 rounded-full border-2 border-white"
-                alt="user"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="relative reveal">
-          <div
-            class="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-orange-100/50 rounded-full blur-3xl"
-          ></div>
-          <img
-            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80"
-            alt="Fitness Center"
-            class="rounded-[2.5rem] shadow-2xl object-cover h-[600px] w-full"
-          />
-        </div>
-      </div>
-    </section>
+    <main>
+      <!-- HERO -->
+      <section id="hero">
+        <div class="hero-grid-bg" aria-hidden="true"></div>
+        <video class="hero-video-bg" autoplay muted loop playsinline>
+          <source src="assets/bg_video.MP4" type="video/mp4" />
+        </video>
 
-    <section id="programmes" class="py-24 bg-white">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-          <h2 class="text-3xl font-bold mb-4">Nos Programmes</h2>
-          <p class="text-gray-500">
-            Des parcours adaptés à vos objectifs, encadrés par des
-            professionnels du sport.
-          </p>
-        </div>
+        <div class="container hero-inner">
+          <div class="hero-text" data-reveal>
+            <h1 class="hero-title">
+              L'EFFORT<br />
+              <span class="bracket-word">
+                <span class="corner corner--tl"></span>
+                <span class="corner corner--tr"></span>
+                <span class="corner corner--bl"></span>
+                <span class="corner corner--br"></span>
+                CALIBRÉ.
+              </span>
+            </h1>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="bg-[#FAFAFA] p-8 rounded-[2rem] card-shadow reveal">
-            <div
-              class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-6"
-            >
-              <i data-lucide="heart-pulse" class="text-[#FF6B00] w-7 h-7"></i>
+            <p class="hero-desc">
+              Empire Gym est conçu comme un instrument de précision&nbsp;:
+              équipement calibré, coachs certifiés, résultats mesurés. Pas de
+              place pour l'approximatif.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#tarifs" class="btn btn-accent">Réserver une séance</a>
+              <a href="#about" class="btn btn-outline">
+                Visiter la salle
+                <span class="corner corner--tl"></span>
+                <span class="corner corner--tr"></span>
+                <span class="corner corner--bl"></span>
+                <span class="corner corner--br"></span>
+              </a>
             </div>
-            <h3 class="text-xl font-bold mb-3">Cardio & Endurance</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">
-              Améliorez votre souffle et votre santé cardiaque sur nos machines
-              haut de gamme.
+          </div>
+
+          <div class="hud-stats" data-reveal>
+            <div class="hud-stat">
+              <span class="hud-value" data-count="1500">0</span>
+              <span class="accent-text">+</span>
+              <span class="hud-label">MEMBRES ACTIFS</span>
+            </div>
+            <div class="hud-stat">
+              <span class="hud-value" data-count="20">0</span>
+              <span class="accent-text">+</span>
+              <span class="hud-label">COACHS CERTIFIÉS</span>
+            </div>
+            <div class="hud-stat">
+              <span class="hud-value" data-count="800">0</span>
+              <span class="hud-unit">M²</span>
+              <span class="hud-label">ZONE D'ÉLITE</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROGRAMMES -->
+      <section id="programmes">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <span class="coord-tag coord-tag--inline">/ 01 — PROGRAMMES</span>
+            <h2>
+              Quatre protocoles.
+              <span class="accent-text">Un seul standard.</span>
+            </h2>
+            <p>
+              Des parcours mesurés, encadrés par des professionnels du sport.
             </p>
           </div>
-          <div class="bg-[#FAFAFA] p-8 rounded-[2rem] card-shadow reveal">
-            <div
-              class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-6"
-            >
-              <i data-lucide="flame" class="text-[#FF6B00] w-7 h-7"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-3">Perte de poids</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">
-              Un programme intensif et un suivi nutritionnel pour brûler les
-              graisses efficacement.
-            </p>
-          </div>
-          <div class="bg-[#FAFAFA] p-8 rounded-[2rem] card-shadow reveal">
-            <div
-              class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-6"
-            >
-              <i data-lucide="zap" class="text-[#FF6B00] w-7 h-7"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-3">Prise de masse</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">
-              Développez votre volume musculaire avec nos équipements de
-              musculation libres.
-            </p>
-          </div>
-          <div class="bg-[#FAFAFA] p-8 rounded-[2rem] card-shadow reveal">
-            <div
-              class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-6"
-            >
-              <i data-lucide="shield-check" class="text-[#FF6B00] w-7 h-7"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-3">Renforcement</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">
-              Tonifiez votre corps et améliorez votre posture au quotidien.
-            </p>
+
+          <div class="program-grid">
+            <article class="program-card" data-reveal>
+              <span class="corner corner--tl"></span>
+              <span class="corner corner--tr"></span>
+              <span class="corner corner--bl"></span>
+              <span class="corner corner--br"></span>
+              <span class="program-code">PRG—01</span>
+              <svg class="program-icon" viewBox="0 0 32 32" fill="none">
+                <path
+                  d="M6 16h4M22 16h4M10 16a6 6 0 1 0 12 0 6 6 0 1 0-12 0Z"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                />
+              </svg>
+              <h3>Cardio &amp; Endurance</h3>
+              <p>
+                Améliorez votre souffle et votre santé cardiaque sur des
+                machines calibrées.
+              </p>
+            </article>
+
+            <article class="program-card" data-reveal>
+              <span class="corner corner--tl"></span>
+              <span class="corner corner--tr"></span>
+              <span class="corner corner--bl"></span>
+              <span class="corner corner--br"></span>
+              <span class="program-code">PRG—02</span>
+              <svg class="program-icon" viewBox="0 0 32 32" fill="none">
+                <path
+                  d="M16 6v6M16 20v6M6 16h6M20 16h6"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                />
+                <circle
+                  cx="16"
+                  cy="16"
+                  r="4"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                />
+              </svg>
+              <h3>Perte de poids</h3>
+              <p>
+                Programme intensif et suivi nutritionnel pour des résultats
+                mesurables.
+              </p>
+            </article>
+
+            <article class="program-card" data-reveal>
+              <span class="corner corner--tl"></span>
+              <span class="corner corner--tr"></span>
+              <span class="corner corner--bl"></span>
+              <span class="corner corner--br"></span>
+              <span class="program-code">PRG—03</span>
+              <svg class="program-icon" viewBox="0 0 32 32" fill="none">
+                <rect
+                  x="5"
+                  y="13"
+                  width="4"
+                  height="6"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                />
+                <rect
+                  x="23"
+                  y="13"
+                  width="4"
+                  height="6"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                />
+                <line
+                  x1="9"
+                  y1="16"
+                  x2="23"
+                  y2="16"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                />
+              </svg>
+              <h3>Prise de masse</h3>
+              <p>
+                Développez votre volume musculaire avec un équipement de
+                musculation libre.
+              </p>
+            </article>
+
+            <article class="program-card" data-reveal>
+              <span class="corner corner--tl"></span>
+              <span class="corner corner--tr"></span>
+              <span class="corner corner--bl"></span>
+              <span class="corner corner--br"></span>
+              <span class="program-code">PRG—04</span>
+              <svg class="program-icon" viewBox="0 0 32 32" fill="none">
+                <path
+                  d="M16 4 26 9v8c0 7-5 10-10 11C11 27 6 24 6 17V9Z"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                />
+              </svg>
+              <h3>Renforcement</h3>
+              <p>
+                Tonifiez votre corps et corrigez votre posture au quotidien.
+              </p>
+            </article>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="about" class="py-24 bg-gray-50">
-      <div
-        class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center"
-      >
-        <div class="grid grid-cols-2 gap-4 reveal">
-          <img
-            src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&q=80"
-            class="rounded-3xl h-64 w-full object-cover shadow-lg"
-            alt="Gym"
-          />
-          <img
-            src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&q=80"
-            class="rounded-3xl h-64 w-full object-cover mt-8 shadow-lg"
-            alt="Gym"
-          />
-        </div>
-        <div class="reveal">
-          <h2 class="text-4xl font-bold mb-6 italic tracking-tight">
-            L'excellence au cœur d'Abatta.
-          </h2>
-          <p class="text-gray-600 text-lg mb-8 leading-relaxed">
-            Empire Gym n'est pas juste une salle de sport. C'est un espace
-            premium pensé pour offrir un environnement propre, motivant et
-            professionnel. Que vous soyez débutant ou athlète confirmé, nous
-            mettons à votre disposition le meilleur équipement d'Abidjan.
-          </p>
-
-          <div class="space-y-6 mb-10">
-            <div class="flex items-start gap-4">
-              <div class="p-2 bg-white rounded-lg shadow-sm">
-                <i data-lucide="map-pin" class="text-[#FF6B00] w-5 h-5"></i>
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="container about-inner">
+          <div class="about-visual" data-reveal>
+            <div class="about-progress-rail">
+              <div class="about-progress-fill" id="about-fill"></div>
+            </div>
+            <div class="about-photos">
+              <div class="about-photo about-photo--a">
+                <img
+                  src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&q=80&w=700"
+                  alt="Zone musculation"
+                />
+                <span class="photo-tag">ZONE — MUSCULATION LIBRE</span>
               </div>
+              <div class="about-photo about-photo--b">
+                <img
+                  src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&q=80&w=700"
+                  alt="Vestiaires"
+                />
+                <span class="photo-tag">ZONE — VESTIAIRES</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-text" data-reveal>
+            <span class="coord-tag coord-tag--inline">/ 02 — LA SALLE</span>
+            <h2>L'excellence,<br />mesurée au détail.</h2>
+            <p>
+              Empire Gym n'est pas qu'une salle de sport. C'est un espace pensé
+              comme un atelier de précision&nbsp;: propre, calibré,
+              professionnel. Débutant ou athlète confirmé, vous disposez du
+              meilleur équipement d'Abatta.
+            </p>
+
+            <div class="data-rows">
+              <div class="data-row">
+                <span class="data-row-label">LOCALISATION</span>
+                <span class="data-row-value"
+                  >Route d'Abatta, face Ola Energy, Abidjan</span
+                >
+              </div>
+              <div class="data-row">
+                <span class="data-row-label">LUN — VEN</span>
+                <span class="data-row-value">06h00 — 22h00</span>
+              </div>
+              <div class="data-row">
+                <span class="data-row-label">SAM — DIM</span>
+                <span class="data-row-value">08h00 — 18h00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TARIFS -->
+      <section id="tarifs">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <span class="coord-tag coord-tag--inline">/ 03 — TARIFS</span>
+            <h2>
+              Trois niveaux.
+              <span class="accent-text">Une seule exigence.</span>
+            </h2>
+            <p>
+              Choisissez le protocole d'accès qui correspond à votre ambition.
+            </p>
+          </div>
+
+          <div class="pricing-grid">
+            <article class="price-card" data-reveal>
+              <span class="corner corner--tl"></span>
+              <span class="corner corner--tr"></span>
+              <span class="corner corner--bl"></span>
+              <span class="corner corner--br"></span>
+              <span class="program-code">SPEC—01</span>
+              <h3>Basique</h3>
+              <div class="price-value">
+                <span>25.000</span><small>CFA/mois</small>
+              </div>
+              <ul class="price-list">
+                <li class="is-on">Accès salle musculation</li>
+                <li class="is-on">Vestiaires &amp; douches</li>
+                <li class="is-off">Coach personnel</li>
+                <li class="is-off">Accès VIP 24/7</li>
+              </ul>
+              <a href="#contact" class="btn btn-outline btn-block"
+                >S'inscrire</a
+              >
+            </article>
+
+            <article class="price-card price-card--featured" data-reveal>
+              <span class="corner corner--tl"></span>
+              <span class="corner corner--tr"></span>
+              <span class="corner corner--bl"></span>
+              <span class="corner corner--br"></span>
+              <span class="program-code">SPEC—02</span>
+              <span class="stamp">RECOMMANDÉ</span>
+              <h3>Standard</h3>
+              <div class="price-value">
+                <span class="accent-text">40.000</span><small>CFA/mois</small>
+              </div>
+              <ul class="price-list">
+                <li class="is-on">Tous les accès Basique</li>
+                <li class="is-on">Cours collectifs inclus</li>
+                <li class="is-on">1 séance bilan avec coach</li>
+                <li class="is-off">Accès VIP 24/7</li>
+              </ul>
+              <a href="#contact" class="btn btn-accent btn-block"
+                >S'inscrire maintenant</a
+              >
+            </article>
+
+            <article class="price-card" data-reveal>
+              <span class="corner corner--tl"></span>
+              <span class="corner corner--tr"></span>
+              <span class="corner corner--bl"></span>
+              <span class="corner corner--br"></span>
+              <span class="program-code">SPEC—03</span>
+              <h3>Premium</h3>
+              <div class="price-value">
+                <span>65.000</span><small>CFA/mois</small>
+              </div>
+              <ul class="price-list">
+                <li class="is-on">Accès illimité 24/7</li>
+                <li class="is-on">Coach personnel dédié</li>
+                <li class="is-on">Espace détente &amp; sauna</li>
+                <li class="is-on">Coaching nutritionnel</li>
+              </ul>
+              <a href="#contact" class="btn btn-outline btn-block"
+                >Devenir membre Premium</a
+              >
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section id="temoignages">
+        <div class="container">
+          <div class="transmission" data-reveal>
+            <div class="transmission-head">
+              <span class="coord-dot"></span>
+              TRANSMISSION — MEMBRE #042
+            </div>
+            <p class="transmission-quote">
+              « La meilleure salle d'Abatta sans hésiter. Le matériel est
+              toujours propre et l'ambiance est parfaite pour rester concentré.
+              »
+            </p>
+            <div class="transmission-foot">
+              <img src="https://i.pravatar.cc/100?u=a" alt="Jean-Marc Koffi" />
               <div>
-                <p class="font-bold">Localisation</p>
-                <p class="text-gray-500">
-                  Route d’Abatta, face Ola Energy, Abidjan
-                </p>
-              </div>
-            </div>
-            <div class="flex items-start gap-4">
-              <div class="p-2 bg-white rounded-lg shadow-sm">
-                <i data-lucide="clock" class="text-[#FF6B00] w-5 h-5"></i>
-              </div>
-              <div>
-                <p class="font-bold">Horaires d'ouverture</p>
-                <p class="text-gray-500 text-sm">Lun - Ven : 06h00 – 22h00</p>
-                <p class="text-gray-500 text-sm">Sam - Dim : 08h00 – 18h00</p>
+                <strong>Jean-Marc Koffi</strong>
+                <span>Membre depuis 2 ans</span>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="tarifs" class="py-24 bg-white">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16 reveal">
-          <h2 class="text-4xl font-bold mb-4">Nos Offres</h2>
-          <p class="text-gray-500">
-            Choisissez le plan qui correspond à votre ambition.
+      <!-- CTA -->
+      <section id="cta">
+        <div class="cta-grid-bg" aria-hidden="true"></div>
+        <div class="container cta-inner" data-reveal>
+          <span class="coord-tag coord-tag--inline coord-tag--light"
+            >/ DERNIÈRE ÉTAPE</span
+          >
+          <h2>Prêt à calibrer<br />ta transformation&nbsp;?</h2>
+          <p>
+            Rejoins Empire Gym dès aujourd'hui et profite d'une séance d'essai
+            gratuite.
           </p>
+
+          <form class="cta-form" id="cta-form">
+            <input type="email" placeholder="ton.email@exemple.com" required />
+            <button type="submit" class="btn btn-accent">ENVOYER →</button>
+          </form>
         </div>
+      </section>
+    </main>
 
-        <div class="grid md:grid-cols-3 gap-8">
-          <div
-            class="p-10 rounded-[2.5rem] border border-gray-100 card-shadow reveal"
-          >
-            <h3 class="text-xl font-bold mb-2">Basique</h3>
-            <div class="flex items-baseline gap-1 mb-6">
-              <span class="text-4xl font-extrabold tracking-tighter"
-                >25.000</span
-              >
-              <span class="text-gray-400 font-medium">CFA/mois</span>
-            </div>
-            <ul class="space-y-4 mb-10 text-gray-600 text-sm">
-              <li class="flex items-center gap-3">
-                <i data-lucide="check" class="text-green-500 w-4 h-4"></i> Accès
-                salle musculation
-              </li>
-              <li class="flex items-center gap-3">
-                <i data-lucide="check" class="text-green-500 w-4 h-4"></i>
-                Vestiaires & Douches
-              </li>
-              <li class="flex items-center gap-3 opacity-40">
-                <i data-lucide="x" class="w-4 h-4"></i> Coach personnel
-              </li>
-              <li class="flex items-center gap-3 opacity-40">
-                <i data-lucide="x" class="w-4 h-4"></i> Accès VIP 24/7
-              </li>
-            </ul>
-            <button
-              class="w-full py-4 rounded-2xl border border-gray-200 font-bold hover:bg-gray-50 transition-all"
-            >
-              S'inscrire
-            </button>
-          </div>
-
-          <div
-            class="p-10 rounded-[2.5rem] bg-gray-900 text-white transform scale-105 shadow-2xl shadow-orange-200 relative overflow-hidden reveal"
-          >
-            <div
-              class="absolute top-5 right-5 bg-[#FF6B00] text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest"
-            >
-              Populaire
-            </div>
-            <h3 class="text-xl font-bold mb-2">Standard</h3>
-            <div class="flex items-baseline gap-1 mb-6">
-              <span
-                class="text-4xl font-extrabold tracking-tighter text-[#FF6B00]"
-                >40.000</span
-              >
-              <span class="text-gray-400 font-medium">CFA/mois</span>
-            </div>
-            <ul class="space-y-4 mb-10 text-gray-300 text-sm">
-              <li class="flex items-center gap-3">
-                <i data-lucide="check" class="text-[#FF6B00] w-4 h-4"></i> Tous
-                les accès Basique
-              </li>
-              <li class="flex items-center gap-3">
-                <i data-lucide="check" class="text-[#FF6B00] w-4 h-4"></i> Cours
-                collectifs inclus
-              </li>
-              <li class="flex items-center gap-3">
-                <i data-lucide="check" class="text-[#FF6B00] w-4 h-4"></i> 1
-                séance bilan avec coach
-              </li>
-              <li class="flex items-center gap-3 opacity-40">
-                <i data-lucide="x" class="w-4 h-4"></i> Accès VIP 24/7
-              </li>
-            </ul>
-            <button
-              class="w-full py-4 rounded-2xl orange-gradient text-white font-bold btn-hover"
-            >
-              S'inscrire maintenant
-            </button>
-          </div>
-
-          <div
-            class="p-10 rounded-[2.5rem] border border-gray-100 card-shadow reveal"
-          >
-            <h3 class="text-xl font-bold mb-2">Premium</h3>
-            <div class="flex items-baseline gap-1 mb-6">
-              <span class="text-4xl font-extrabold tracking-tighter"
-                >65.000</span
-              >
-              <span class="text-gray-400 font-medium">CFA/mois</span>
-            </div>
-            <ul class="space-y-4 mb-10 text-gray-600 text-sm">
-              <li class="flex items-center gap-3">
-                <i data-lucide="check" class="text-green-500 w-4 h-4"></i> Accès
-                illimité 24/7
-              </li>
-              <li class="flex items-center gap-3">
-                <i data-lucide="check" class="text-green-500 w-4 h-4"></i> Coach
-                personnel dédié
-              </li>
-              <li class="flex items-center gap-3">
-                <i data-lucide="check" class="text-green-500 w-4 h-4"></i>
-                Espace détente & Sauna
-              </li>
-              <li class="flex items-center gap-3">
-                <i data-lucide="check" class="text-green-500 w-4 h-4"></i>
-                Coaching nutritionnel
-              </li>
-            </ul>
-            <button
-              class="w-full py-4 rounded-2xl border border-gray-200 font-bold hover:bg-gray-50 transition-all"
-            >
-              Devenir membre Gold
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-24 bg-gray-50 overflow-hidden">
-      <div class="max-w-7xl mx-auto px-6 text-center mb-12 reveal">
-        <h2 class="text-3xl font-bold">Ils nous font confiance</h2>
-      </div>
-
-      <div
-        class="flex transition-transform duration-500 ease-in-out px-6 max-w-4xl mx-auto"
-        id="testimonial-container"
-      >
-        <div
-          class="min-w-full bg-white p-10 md:p-16 rounded-[3rem] shadow-sm text-center reveal"
-        >
-          <i
-            data-lucide="quote"
-            class="w-12 h-12 text-orange-100 mx-auto mb-6"
-          ></i>
-          <p
-            class="text-xl md:text-2xl font-medium italic mb-8 leading-relaxed"
-          >
-            "La meilleure salle d'Abatta sans hésiter. Le matériel est toujours
-            propre et l'ambiance est parfaite pour rester concentré."
-          </p>
-          <div class="flex items-center justify-center gap-4">
-            <img
-              src="https://i.pravatar.cc/100?u=a"
-              class="w-14 h-14 rounded-full border-2 border-[#FF6B00]"
-              alt="Jean"
-            />
-            <div class="text-left">
-              <p class="font-bold">Jean-Marc Koffi</p>
-              <p class="text-sm text-gray-400">Membre depuis 2 ans</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-20 px-6">
-      <div
-        class="max-w-5xl mx-auto orange-gradient rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden shadow-2xl shadow-orange-300 reveal"
-      >
-        <div
-          class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-64 h-64 bg-white/10 rounded-full blur-3xl"
-        ></div>
-        <h2 class="text-4xl md:text-5xl font-black mb-6">
-          Prêt à commencer ta transformation ?
-        </h2>
-        <p class="text-orange-100 text-lg mb-10 max-w-xl mx-auto">
-          Rejoins la communauté SELECTFIT dès aujourd'hui et profite d'une
-          séance d'essai gratuite.
-        </p>
-
-        <form class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
-          <input
-            type="email"
-            placeholder="Ton adresse email"
-            class="flex-1 px-6 py-4 rounded-2xl text-black focus:outline-none focus:ring-2 focus:ring-white/50"
-          />
-          <button
-            class="bg-black text-white px-8 py-4 rounded-2xl font-bold btn-hover shadow-xl"
-          >
-            C'est parti !
-          </button>
-        </form>
-      </div>
-    </section>
-
-    <footer id="contact" class="pt-24 pb-12 bg-white border-t border-gray-100">
-      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12 mb-16">
-        <div class="col-span-1 md:col-span-1">
-          <div class="flex items-center gap-2 mb-6">
-            <div
-              class="w-8 h-8 orange-gradient rounded-lg flex items-center justify-center"
-            >
-              <i data-lucide="dumbbell" class="text-white w-4 h-4"></i>
-            </div>
-            <span class="text-xl font-black italic tracking-tighter"
-              >Empire<span class="text-[#FF6B00]">Gym</span></span
-            >
-          </div>
-          <p class="text-gray-400 text-sm leading-relaxed">
-            L'excellence du fitness à Abatta. Votre santé, notre priorité.
-          </p>
-        </div>
-
-        <div>
-          <h4 class="font-bold mb-6">Navigation</h4>
-          <ul class="space-y-4 text-sm text-gray-500">
-            <li>
-              <a href="#programmes" class="hover:text-[#FF6B00]">Programmes</a>
-            </li>
-            <li><a href="#about" class="hover:text-[#FF6B00]">La Salle</a></li>
-            <li>
-              <a href="#tarifs" class="hover:text-[#FF6B00]">Nos Tarifs</a>
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="font-bold mb-6">Contact</h4>
-          <ul class="space-y-4 text-sm text-gray-500">
-            <li class="flex items-center gap-3">
-              <i data-lucide="phone" class="w-4 h-4 text-[#FF6B00]"></i> 05 56
-              77 71 13
-            </li>
-            <li class="flex items-center gap-3">
-              <i data-lucide="mail" class="w-4 h-4 text-[#FF6B00]"></i>
-              empiregym.ci@gmail.com
-            </li>
-            <li class="flex items-center gap-3">
-              <i data-lucide="map-pin" class="w-4 h-4 text-[#FF6B00]"></i>
-              Abatta, village
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="font-bold mb-6">Réseaux</h4>
-          <div class="flex gap-4">
-            <a
-              href="#"
-              aria-label="Instagram"
-              class="w-10 h-10 border border-gray-100 rounded-xl flex items-center justify-center hover:bg-orange-50 hover:text-[#FF6B00] transition-all"
-            >
+    <!-- FOOTER -->
+    <footer id="contact">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="#hero" class="brand">
+            <span class="brand-mark">
               <svg
                 viewBox="0 0 24 24"
-                aria-hidden="true"
-                class="w-5 h-5"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="1"
+                  y="1"
+                  width="22"
+                  height="22"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="2.5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+              </svg>
+            </span>
+            <span class="brand-word"
+              >EMPIRE<span class="accent-text">GYM</span></span
+            >
+          </a>
+          <p>L'excellence du fitness à Abatta. Votre santé, notre précision.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="#programmes">Programmes</a>
+          <a href="#about">La Salle</a>
+          <a href="#tarifs">Tarifs</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="tel:0556777113">05 56 77 71 13</a>
+          <a href="mailto:empiregym.ci@gmail.com">empiregym.ci@gmail.com</a>
+          <span>Abatta, village</span>
+        </div>
+
+        <div class="footer-col">
+          <h4>Réseaux</h4>
+          <div class="footer-socials">
+            <a href="#" aria-label="Instagram" class="social-frame">
+              <span class="corner corner--tl"></span
+              ><span class="corner corner--tr"></span>
+              <span class="corner corner--bl"></span
+              ><span class="corner corner--br"></span>
+              <svg
+                viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                stroke-width="1.6"
               >
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path
-                  d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
-                ></path>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                <rect x="3" y="3" width="18" height="18" rx="4" />
+                <circle cx="12" cy="12" r="4" />
+                <line x1="17.5" y1="6.5" x2="17.5" y2="6.5" />
               </svg>
             </a>
-            <a
-              href="#"
-              aria-label="Facebook"
-              class="w-10 h-10 border border-gray-100 rounded-xl flex items-center justify-center hover:bg-orange-50 hover:text-[#FF6B00] transition-all"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-                class="w-5 h-5"
-                fill="currentColor"
-              >
+            <a href="#" aria-label="Facebook" class="social-frame">
+              <span class="corner corner--tl"></span
+              ><span class="corner corner--tr"></span>
+              <span class="corner corner--bl"></span
+              ><span class="corner corner--br"></span>
+              <svg viewBox="0 0 24 24" fill="currentColor">
                 <path
                   d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.7-1.6H17V4.8c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.4V11H7.5v3h2.8v8h3.2Z"
-                ></path>
+                />
               </svg>
             </a>
           </div>
         </div>
       </div>
 
-      <div
-        class="max-w-7xl mx-auto px-6 pt-8 border-t border-gray-100 flex flex-col md:row justify-between items-center gap-4 text-xs text-gray-400"
-      >
-        <p>
-          © <span id="current-year">2026</span> Empire Gym Abidjan. Tous droits
-          réservés.
-        </p>
-        <p>Designed & Developed by MMD.Dev</p>
+      <div class="container footer-bottom">
+        <span
+          >© <span id="current-year">2026</span> Empire Gym Abidjan. Tous droits
+          réservés.</span
+        >
+        <span class="footer-coords">05.3364° N — 04.0267° W</span>
       </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
