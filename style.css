@@ -1040,6 +1040,10 @@ footer {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
+
+  .footer-bottom {
+    justify-content: center;
+  }
 }
 
 /* SCROLL REVEA */

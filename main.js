@@ -92,6 +92,12 @@ function initNav() {
       mobileMenu.classList.remove("is-open"),
     );
   });
+
+  // Force lecture video sur mobile
+  const video = document.querySelector(".hero-video-bg");
+  if (video) {
+    video.play().catch(() => {});
+  }
 }
 
 // SCROLL REVEALS
